@@ -1,0 +1,11 @@
+Crear una función que reciba dos arrays y que pueda operar sobre ellos en paralelo, realizando la operación que le indique la función externa. Por ejemplo
+fuction operar(a1, a2, funCll) {
+    // Programar aquí
+}
+a1 = [2, 3, 4];
+a2 = [1, 2, 3];
+// el resultado es
+res = operar(a1, a2, (x, y) => x + y);  // [3, 5, 7]
+// Crear otras funciones como la suma o usar las del primer ejemplo que vimos.
+se puede comprobar que son iguales los array. 
+// Mostrarlo con innerHTML o como queráis

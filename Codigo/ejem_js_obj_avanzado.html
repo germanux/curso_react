@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1 = {
+            propA: "Valor A",
+            propB: "V B"
+        };
+        let v1 = 100;
+        function f(x, y) {
+            y = 300;
+            let mismoObj = x;
+            
+            let v2 = x.propA + " Concatenado";
+            x.propA = "Anda la leche!";
+            x = new Object();
+            x.propA = "Otra cosa";
+            mismoObj.propA = "Hostia!";
+            document.write("mismoObj.pA = " + mismoObj.propA);
+            document.write("x.pA = " + x.propA);
+            return v2;
+        }
+        let v3 = f(obj1, v1);
+        document.write(v1);
+        document.write(v3);
+        document.write(obj1.propA);
+    </script>
+</body>
+</html>

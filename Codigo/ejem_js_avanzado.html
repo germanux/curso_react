@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumar(x, y) {
+            return x + y;
+        }
+        var restar = function(x, y) {
+            return x - y;
+        }
+        var mult = (x, y) => x * y;
+        var dividir = new Function("x", "y", "{ return x / y; }");
+        dividir.propiedad = 200;
+
+        document.write(`<p>Suma: ${sumar(3, 2)} -> ${typeof sumar(3, 2)}</p>`);
+        document.write(`<p>Resta: ${restar(3, 2)}</p>`);
+        document.write(`<p>mult: ${mult(3, 2)}</p>`);
+        document.write(`<p>dividir: ${dividir(3, 2)} -> ${typeof dividir(3, 2)}</p>`);
+        document.write(`<p>${typeof sumar} ${typeof restar} ${typeof mult} ${typeof dividir}  ${typeof obj}  </p>`);
+        document.write(`<p>dividir.propiedad: ${dividir.propiedad}</p>`);
+
+        var obj = {
+            prop1: 10,
+            'prop2': 20,
+            "prop2": 30
+        }
+        var codigoUsuario = prompt("Pon el código");
+        var funUsuario = new Function(codigoUsuario);
+        funUsuario();
+        Object.prototype.metodo = function() {
+            alert("Metodo");
+        }
+        var obj1 = new Object();
+        var obj2 = {
+                prop1: 200
+            }
+            //Object.prototype.metodo();
+        obj2.metodo();
+
+
+        var obj = new Object();
+        obj.nombre = "Un objeto";
+        obj["apellidos"] = "De Alli";
+        document.write(` ${obj.nombre} `);
+        document.write(` ${obj.apellidos} `);
+        document.write(` ${obj['nombre']} `);
+    </script>
+</body>
+
+</html>

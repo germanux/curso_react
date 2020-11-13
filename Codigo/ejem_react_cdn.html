@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intro Reac</title>
+</head>
+
+<body>
+    <h1>Ejemplo Intro React</h1>
+    <div id="mi-boton">Cargando...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+        // La clase hereda de la clase Component (pertenece a la librería React, ó módulo React, aunque este no es más que un mero Objecto y Component, una mera propiedad del objeto React). 
+        
+        class MiBoton extends React.Component {
+            constructor() { // cuando new ...U()ç
+                super();    // Llama al constructor del padre
+                this.state = { // Propiedad especial de React, que corresponde al Modelo en el patrón MODELO
+                    color: "red"
+                };
+                console.log("Creando Componente");
+            }
+            render() {
+                // Método especial que corresponde a la VISTA.
+                return (
+                    <h2>
+                        <p>texto tal cosa</p>
+                        Yo soy un componente {  this.state.color } pre-creado en el <span>Virtua DOM</span>
+                    </h2>
+                );
+            }
+        }
+        window.onload = function () {
+            console.log("Antes de crear Componente");
+            let comp1 = <MiBoton />; //* Con JSX referenciamos el componente como si fuera una entiqueta HTML nueva creada por nosotros.
+            console.log("Después de referenciar Componente");
+            const conentedorDOM = document.querySelector("#mi-boton"); // getElemByID...
+            // .render() se encarga de instanciar el Componente creando el VirtualDOM, etc...
+            ReactDOM.render(comp1, conentedorDOM);
+            console.log("Después de crear Componente");
+            // No podemos acceder al estado desde fuera del componente, sólo con las props
+            /*comp1.setState({  
+                color: "VERDE"
+            });*/
+        };
+        /*  function MiBoton() {
+            // Método especial que corresponde a la VISTA.
+            return (
+                <h2>
+            Yo soy un componente {  this.state.color }
+                </h2>
+               ) ;
+        }*/
+        /*inputTal.onclick = function() {
+
+                                                                                        }*/
+    </script>
+</body>
+
+</html>
