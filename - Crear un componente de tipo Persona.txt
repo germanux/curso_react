@@ -1,0 +1,14 @@
+- Crear un componente de tipo Persona
+- Con varios props para datos personales: nombre, apellidos, 
+
+    <h1> TITULO 
+
+    <ListaPersonas>
+
+        <ul>
+    <Persona> ->   <li><label>Nombre:</label> Fulanito  -  Edad: 30</li>
+    <Persona> ->   <li><label>Nombre:</label> Fulanito  -  Edad: 30</li>
+    <Persona> ->   <li><label>Nombre:</label> Fulanito  -  Edad: 30</li>
+        </ul>
+
+    </ListaPersonas>
