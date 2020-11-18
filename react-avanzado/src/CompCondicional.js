@@ -4,7 +4,7 @@ export default function(props) {
     if (props.mostrar) {
         elem = <p>Pues ale, otra vez</p>
     } else {
-        elem = null;
+        elem = <p>No queremos que se muestra</p>;
     }
     return (
         <div>

@@ -1,3 +1,8 @@
+.link-activo {
+  background-color: lightgoldenrodyellow;
+  font-size: 1.5em;
+}
+
 .App {
   text-align: center;
 }

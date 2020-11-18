@@ -1,16 +1,20 @@
 {
-    "name": "ejemplo-api",
-    "version": "1.0.0",
-    "description": "Ejemplo de API con Node",
-    "main": "server.js",
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "express": "^4.17.1"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "German Caballero",
-    "license": "ISC"
+  "name": "mearn-stack-backend",
+  "version": "1.0.0",
+  "description": "MERN Stack backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Digamber Rawat",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }

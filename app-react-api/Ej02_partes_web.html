@@ -55,9 +55,6 @@
 </head>
 
 <body style="padding: 10px">
-    <header>
-        <h1 id="titulo">Típico título</h1>
-    </header>
     <nav class="texto-fondo-claro">
         <ul class="menu-superior">
             <li class="item-menu-superior">Ir principal</li>
@@ -95,6 +92,14 @@
         </article>
     </section>
     <footer>Pie de página</footer>
+    <script>
+        var nombrePropiedad = "prop_a";
+        let obj = {
+            "prop_b": 100,
+            [nombrePropiedad]: "200"
+        };
+        alert(obj.nombrePropiedad);
+    </script>
 </body>
 
 </html>
