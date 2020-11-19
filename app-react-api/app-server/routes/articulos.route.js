@@ -4,12 +4,13 @@ let  express = require('express'),
 // Student Model
 let Articulo = require('../modelos/Articulo');
 let articulos = [
-  new Articulo("Ingenio caido", "Un cohete lo tumbó"),
-  new Articulo("Suceso extraño", "La aplicación compiló a la primera")
+  new Articulo("Ingenio caido", "Un cohete lo tumbó", true),
+  new Articulo("Suceso extraño", "La aplicación compiló a la primera", false)
 ];
 
 // CREATE articulo
 router.route('/').post((req, res, next) => {
+  console.log("Crear articulo: " + JSON.stringify(req.body));
   articulos.push(req.body);
   res.json(req.body);
 });

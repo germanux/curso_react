@@ -3,19 +3,42 @@ import LibreriaReact from 'react';
 export default class Formulario extends LibreriaReact.Component {
     constructor() {
         super();
-        this.state = {
+        this.state =  {
             otrasEstados: "",
             objArticulo: {
                 titulo: '',
-                descripcion: ''
+                descripcion: '',
+                publico: false
             }
         };
+    }
+    componentDidMount() {
+
+        this.setState( {
+            otrasEstados: "",
+            objArticulo: {
+                titulo: '',
+                descripcion: '',
+                publico: false
+            }
+        });
+        
     }
     gestionarInput = (objEvento) => {
         let inputEvento = objEvento.target;
         let valorInput = inputEvento.value;
         let objArt = this.state.objArticulo;
         objArt[inputEvento.name] = valorInput;
+        this.setState({
+            objArticulo: objArt
+        });
+        console.log(valorInput);
+    }    
+    gestionarCheckbox = (objEvento) => {
+        let inputEvento = objEvento.target;
+        let valorInput = inputEvento.value;
+        let objArt = this.state.objArticulo;
+        objArt[inputEvento.name] = objEvento.target.checked ? true : false ;
         this.setState({
             objArticulo: objArt
         });
@@ -41,7 +64,12 @@ export default class Formulario extends LibreriaReact.Component {
         });
         promesaEnvio
         .then(res => res.json())
-        .then(data => alert("Se envio " + data.json));;
+        .then(data => {
+            alert("Se envio y recibimos " + JSON.stringify(data));
+            if (data != null) {
+                this.componentDidMount();
+            }
+        } );;
         /* {
             "titulo": "Se ha perdido un perro",
             "descripcion": "Se perdió en el Retiro y nunca apareción" 
@@ -55,11 +83,18 @@ export default class Formulario extends LibreriaReact.Component {
                 <form action="#" onSubmit={this.gestionarAntesDeEnviarForm}>
                     <div>
                         {labelTitulo}
-                        <input name="titulo" type="text" onChange={this.gestionarInput} />
+                        <input name="titulo" type="text"
+                        value={this.state.objArticulo.titulo} onChange={this.gestionarInput} />
+                    </div>
+                   <div>
+                        <label>Descripcion:</label>
+                        <textarea name="descripcion" 
+                        value={this.state.objArticulo.descripcion}  onChange={this.gestionarInput}></textarea>
                     </div>
                     <div>
-                        <label>Descripcion:</label>
-                        <textarea name="descripcion" onChange={this.gestionarInput}></textarea>
+                        <label>Publico:</label>
+                        <input type="checkbox" name="publico"
+                        checked={this.state.objArticulo.publico}  onChange={this.gestionarCheckbox}></input>
                     </div>
                     <div><input type="submit" value="Enviar!" /></div>
                 </form>

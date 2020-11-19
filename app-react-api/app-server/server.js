@@ -3,7 +3,7 @@ let cors = require('cors');
 let bodyParser = require('body-parser');
 
 // Express Route
-const studentRoute = require('./routes/articulos.route')
+const articulosRoute = require('./routes/articulos.route')
 
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cors());
-app.use('/api/articulos', studentRoute)
+app.use('/api/articulos', articulosRoute)
 
 
 // PORT
