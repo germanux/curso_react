@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Formulario.css';
 
 export default class ListaArticulos extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class ListaArticulos extends React.Component {
                     if (art.publico) {
 
                         return (
-                            <article key={index}>
+                            <article key={index} >
                                 <h1>{art.titulo} </h1>
                                 <p>{art.descripcion}</p>
                             </article>
